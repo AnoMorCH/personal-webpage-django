@@ -1,0 +1,12 @@
+{
+  "english": {
+    "home-link": "home",
+    "about-me-link": "about me",
+    "projects-link": "projects"
+  },
+  "russian": {
+    "home-link": "дом",
+    "about-me-link": "обо мне",
+    "projects-link": "проекты"
+  }
+}

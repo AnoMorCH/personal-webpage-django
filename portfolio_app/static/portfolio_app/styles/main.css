@@ -1,0 +1,278 @@
+/* PAGINATION */
+/* Font inclusion */
+/* Colors */
+/* General */
+/* Header */
+/* - Grid */
+/* - Burger */
+/* Main */
+/* - Home */
+/* - Projects */
+/* Technical classes */
+
+/* Font inclusion */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* Colors */
+:root {
+  --light-green-color: rgba(60, 179, 113, 1);
+  --light-blue-color: rgba(82, 148, 247, 1);
+  --body-n-burger-items-margin-top-down: 24px;
+}
+
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+body,
+#burger-items {
+  max-width: 1024px;
+  margin: var(--body-n-burger-items-margin-top-down) auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-blue-color);
+  font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  body,
+  #burger-items {
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  body,
+  #burger-items {
+    max-width: 90vw;
+    margin: 5vw auto; 
+  }
+}
+
+/* Header */
+/* - Grid */
+header > #grid {
+  max-height: 20vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 18px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+header > #grid > div:nth-child(2n) {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  header > #grid {
+    max-height: none;
+  }
+}
+
+/* - Burger */
+#burger:hover,
+#go-back:hover {
+  cursor: pointer;
+}
+
+#burger > .line {
+  width: 26px;
+  height: 4px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+#burger-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: white;
+  z-index: 10000;
+  
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -100vh;
+  width: 100vw;
+  height: calc(100vh - 2 * var(--body-n-burger-items-margin-top-down));
+
+  font-size: 64px;
+
+  transition: transform 0.4s ease-in-out;
+}
+
+#burger-items > div {
+  padding: 2vh 0;
+}
+
+#burger-items > div > a:hover {
+  color: var(--light-green-color);
+}
+
+#close-burger-menu-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 48px;
+}
+
+#close-burger-menu-btn:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  #burger-items {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  #burger-items {
+    font-size: 40px;
+  }
+}
+
+/* - Language Switch */
+#language-switch > span:hover {
+  cursor: pointer;
+}
+
+/* - Logo */
+.light-green-underline > span {
+  border-bottom: 4px solid var(--light-green-color);
+}
+
+/* Main */
+main {
+  margin: 5vh 0;
+  line-height: 1.5;
+}
+
+main > * {
+  margin: 16px 0;
+}
+
+/* - Home */
+main#home {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+}
+
+main#home > * {
+  margin: 16px 0;
+}
+
+#authors-name {
+  font-size: 96px;
+  font-weight: bold;
+  color: var(--light-green-color);
+}
+
+@media (max-width: 1024px) {
+  main#home {
+    text-align: center;
+    margin: 20vh 0;
+    position: static;
+    top: none;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #authors-name {
+    font-size: 48px;
+  }
+}
+
+/* - Projects */
+#projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+#projects-container .content-img {
+  position: relative;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+#projects-container .content-img img {
+  width: 100%;
+  height: 100%;
+}
+
+#projects-container .content-img div {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: black;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s, opacity 0.5s linear; 
+  transition: visibility 0s, opacity 0.5s linear;
+
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+#projects-container .content-img:hover {
+  cursor: pointer;
+}
+
+#projects-container .content-img:hover div {
+  visibility: visible;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  #projects-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Technical classes */
+.black-color {
+  color: black;
+}
+
+.light-green-color {
+  color: var(--light-green-color);
+}
+
+.bold-font {
+  font-weight: bold;
+}
+
+ul {
+  margin-left: 20px;
+}

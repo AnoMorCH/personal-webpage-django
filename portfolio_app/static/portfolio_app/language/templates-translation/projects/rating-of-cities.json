@@ -1,0 +1,40 @@
+{
+  "english": {
+    "title": "Anton Morozov | Python Web Developer",
+    "english": "en",
+    "russian": "ru",
+    "page-name": "projects",
+    "project-header": "project name:",
+    "project-description": "rating of cities",
+    "customer-header": "customer name:",
+    "customer-description": "llc a+s transproekt",
+    "timespan-header": "timespan:",
+    "web-page-link-header": "web-page:",
+    "web-page-link-description": "dead",
+    "feedback-header": "feedback:",
+    "feedback-description": "manager's review",
+    "responsibilities-header": "responsibilities:",
+    "responsibilities-description": "python on django, frontend on html / css / js, developer team management",
+    "description-header": "description:",
+    "description-description": "the project was done as a part of the summer practice at the university. its target was to create a webpage to store info about scientific research about quality of public transport of more than 80 russian cities in a visually attracting way. it had a lot of schemas, graphics and auto population of database using excel"
+  },
+  "russian": {
+    "title": "Антон Морозов | Python Веб-Разработчик",
+    "english": "анг",
+    "russian": "ру",
+    "page-name": "проекты",
+    "project-header": "название проекта:",
+    "project-description": "рейтинг городов",
+    "customer-header": "имя заказчика:",
+    "customer-description": "ооо ''а+с транспроект''",
+    "timespan-header": "время работы над проектом:",
+    "web-page-link-header": "веб-сайт:",
+    "web-page-link-description": "не опубликован",
+    "feedback-header": "отзыв:",
+    "feedback-description": "рецензия руководителя",
+    "responsibilities-header": "обязанности:",
+    "responsibilities-description": "python на django, frontend на html / css / js, управление коллективом разработчиков",
+    "description-header": "описание:",
+    "description-description": "данный проект был разработан в рамках летней практики в университете. его основная цель состояла в создании веб-страницы для хранения информации о научном исследовании на предмет качества общественного транспорта более чем 80 российских городов в визуально привлекательном виде. этот проект имеет большое количество схем, графиков и возможность автоматического обновления базы данных при помощи excel"
+  }
+}
