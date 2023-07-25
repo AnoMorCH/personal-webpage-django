@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "./include/head.html" %}
+  </head>
+
+  <body>
+    <header>
+      <div id="grid">
+        {% include "./include/header-grid.html" %}
+      </div>
+
+      <div id="burger-items">
+        {% include "./include/burger-items.html" %}
+      </div>
+    </header>
+
+    <main>
+      <p id="first-line"></p>
+
+      <p id="second-line">
+        <span id="second-line-content"></span>
+        <a href='https://drive.google.com/file/d/156WGxUmH7BdZ6LIa1879EKam-FT-tf7U/view?usp=sharing' class='black-color' target='_blank'>
+          <span class='bold-font light-green-underline'>
+            <span id="cv"></span>
+          </span>
+        </a>
+      </p>
+
+      <div>
+        <p id="characteristics-title" class="bold-font"></p>
+        <ul>
+          <li>
+            <i class="fa-solid fa-hammer light-green-color"></i>
+            <span id="pl">python / unittest / html / css / js</span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-ruler-combined light-green-color"></i>
+            <span id="techs">postgresql / docker / celery / nginx / apache</span>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-laptop light-green-color"></i>
+            <span id="tools">archlinux / neovim / vscode</span> 
+          </li>
+
+          <li>
+            <i class="fa-solid fa-table-tennis-paddle-ball light-green-color"></i>
+            <span id="hobbies"></span> 
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p id="contact-me-title" class="bold-font"></p>
+
+        <span id="contact-me-description"></span> 
+
+        <ul>
+          <li>
+            <i class="fa-brands fa-telegram light-green-color"></i>
+            telegram — 
+            <a href="https://t.me/anomorch"> https://t.me/anomorch </a>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-envelope light-green-color"></i>
+            gmail — 
+            <a href="mailto:morozovantonaleksandrovich@gmail.com"> morozovantonaleksandrovich@gmail.com </a>
+          </li>
+
+          <li>
+            <i class="fa-brands fa-github light-green-color"></i>
+            github — 
+            <a href="https://github.com/anomorch"> https://github.com/anomorch </a>
+          </li>
+
+          <li>
+            <i class="fa-brands fa-vk light-green-color"></i>
+            vk — 
+            <a href="https://vk.com/anomorch"> https://vk.com/anomorch </a>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+
+  <script src="https://kit.fontawesome.com/d41b91cba2.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script type="module" src="{% static 'portfolio_app/scripts/burger.js' %}"></script>
+  <script type="module" src="{% static 'portfolio_app/scripts/language-switch.js' %}"></script>
+  <script type="module" src="{% static 'portfolio_app/scripts/language-switches/templates-translation/about-me.js' %}"></script>
+</html>

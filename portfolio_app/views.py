@@ -10,6 +10,11 @@ def index(request: HttpRequest) -> HttpResponse:
     return render(request, "portfolio_app/index.html")
 
 
+def about_me(request: HttpRequest) -> HttpResponse:
+    """Implements about-me.html template."""
+    return render(request, "portfolio_app/about-me.html")
+
+
 def get_current_static_path(request: HttpRequest) -> HttpResponse:
     """Return a name of current static folder directory."""
     current_static_path = CurrentStaticPath(
@@ -17,5 +22,4 @@ def get_current_static_path(request: HttpRequest) -> HttpResponse:
         STATIC_URL
     )
     json_answer = current_static_path.get_json_response()
-    print(json_answer)
     return HttpResponse(json_answer)
