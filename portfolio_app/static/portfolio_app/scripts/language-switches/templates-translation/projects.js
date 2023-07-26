@@ -1,12 +1,13 @@
 // Switch a language of projects.html template.
 
+import { LanguageHandler } from "../../classes/language-handler.js";
 import { staticFilesDirName } from "../consts.js";
-import { getCurrentLanguage, switchLanguage } from "../helpers/support.js";
 
 switchProjectsLanguage();
 
 function switchProjectsLanguage() {
-  const currentLanguage = getCurrentLanguage();
+  const languageHandler = new LanguageHandler();
+  const currentLanguage = languageHandler.getCurrentFromCookie(); 
   const templatePath = staticFilesDirName + "/language/templates-translation/projects.json";
-  switchLanguage(currentLanguage, templatePath);
+  languageHandler.switch(templatePath, currentLanguage);
 }

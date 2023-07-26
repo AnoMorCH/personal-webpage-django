@@ -1,12 +1,13 @@
 // Switch a language of index.html template.
 
+import { LanguageHandler } from "../../classes/language-handler.js";
 import { staticFilesDirName } from "../consts.js";
-import { getCurrentLanguage, switchLanguage } from "../helpers/support.js";
 
 switchIndexLanguage();
 
 function switchIndexLanguage() {
-  const currentLanguage = getCurrentLanguage();
+  const languageHandler = new LanguageHandler();
+  const currentLanguage = languageHandler.getCurrentFromCookie();
   const templatePath = staticFilesDirName + "/language/templates-translation/index.json";
-  switchLanguage(currentLanguage, templatePath);
+  languageHandler.switch(templatePath, currentLanguage);
 }

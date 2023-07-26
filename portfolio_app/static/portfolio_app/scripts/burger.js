@@ -1,7 +1,7 @@
 // The script is responsible for uploading of the burger and handling its 
 // translation process.
 
-import { NavMenu } from "./burger/nav-menu.js";
+import { NavMenu } from "./classes/nav-menu.js";
 import { switchBurgerLanguage } from "./language-switches/burger-translation/burger.js";
 
 main();

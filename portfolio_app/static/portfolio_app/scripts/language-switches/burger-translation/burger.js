@@ -1,12 +1,13 @@
 // Switch a language of the burger.
 
+import { LanguageHandler } from "../../classes/language-handler.js";
 import { staticFilesDirName } from "../consts.js";
-import { getCurrentLanguage, switchLanguage } from "../helpers/support.js";
 
 function switchBurgerLanguage() {
-  const currentLanguage = getCurrentLanguage();
+  const languageHandler = new LanguageHandler();
+  const currentLanguage = languageHandler.getCurrentFromCookie(); 
   const templatePath = staticFilesDirName + "/language/burger-translation/burger.json";
-  switchLanguage(currentLanguage, templatePath);
+  languageHandler.switch(templatePath, currentLanguage);
 }
 
 export { switchBurgerLanguage };
