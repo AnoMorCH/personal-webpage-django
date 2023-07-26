@@ -3,6 +3,10 @@
     "title": "Anton Morozov | Python Web Developer",
     "english": "en",
     "russian": "ru",
+
+    "name": "graphs for the rating of cities (2022)",
+    "cover-path": "portfolio_project/portfolio_app/static/portfolio_app/imgs/graphs-of-rating-of-cities/cover.png",
+
     "page-name": "projects",
     "project-header": "project name:",
     "project-description": "the graphs of rating of cities",
@@ -22,6 +26,10 @@
     "title": "Антон Морозов | Python Веб-Разработчик",
     "english": "анг",
     "russian": "ру",
+
+    "name": "графики для рейтинга городов (2022)",
+    "cover-path": "portfolio_project/portfolio_app/static/portfolio_app/imgs/graphs-of-rating-of-cities/cover.png",
+
     "page-name": "проекты",
     "project-header": "название проекта:",
     "project-description": "графики для рейтинга городов",

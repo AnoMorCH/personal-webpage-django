@@ -4,17 +4,13 @@
     "english": "en",
     "russian": "ru",
     "page-name": "projects",
-    "first-line": "these are <span class='bold-font'>projects i'm proud of</span> (honestly, there are more of them but unfortunately i can't show them even as screenshots due nda T_T)",
-    "rating-of-cities-description": "the rating of cities (2022)",
-    "graphs-for-the-rating-of-cities": "graphs for the rating of cities (2022)"
+    "first-line": "these are <span class='bold-font'>projects i'm proud of</span> (honestly, there are more of them but unfortunately i can't show them even as screenshots due nda T_T)"
   },
   "russian": {
     "title": "Антон Морозов | Python Веб-Разработчик",
     "english": "анг",
     "russian": "ру",
     "page-name": "проекты",
-    "first-line": "это <span class='bold-font'>проекты, которыми я горжусь</span> (честно говоря, у меня их больше, но, к сожалению, я не могу их показывать даже в виде скриншотов из-за NDA T_T)",
-    "rating-of-cities-description": "рейтинг городов (2022)",
-    "graphs-for-the-rating-of-cities": "графики для рейтингов городов (2022)"
+    "first-line": "это <span class='bold-font'>проекты, которыми я горжусь</span> (честно говоря, у меня их больше, но, к сожалению, я не могу их показывать даже в виде скриншотов из-за NDA T_T)"
   }
 }

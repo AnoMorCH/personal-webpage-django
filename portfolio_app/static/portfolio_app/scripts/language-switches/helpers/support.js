@@ -1,11 +1,10 @@
-import { languageVarName } from "../consts.js";
+import { languageVarName, staticFilesDirName } from "../consts.js";
 
 function getCurrentLanguage() {
   return Cookies.get(languageVarName);
 }
 
-// TODO. Think if you can somehow unite it.
-function getAnswerFromAPI(path) {
+function getAnswerFromApi(path) {
   return fetch(path)
     .then((response) => {
       if (!response.ok) {
@@ -14,31 +13,36 @@ function getAnswerFromAPI(path) {
       return response.json();
     })
     .then((data) => { return data; })
-    .catch((error) => console.log(error));
-}
-
-// TODO. Think if you can somehow unite it.
-function getLanguageJsonFile(filePath) {
-  return fetch(filePath)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("An error has occurred during data transfer");
-      }
-      return response.json();
-    })
-    .then((data) => { return data; })
     .catch((error) => { console.log(error); });
 }
 
-function switchLanguage(currentLanguage, templatePath) {
-  getLanguageJsonFile(templatePath).then((allTranslations) => {
-    const currentLanguageTranslation = allTranslations[currentLanguage];
-    for (const elementId in currentLanguageTranslation) {
-      const elementTranslation = currentLanguageTranslation[elementId];
-      const element = document.getElementById(elementId);
-      if (element !== null) { element.innerHTML = elementTranslation; }
+async function switchLanguage(currentLanguage, templatePath) {
+  const allTranslations = await getAnswerFromApi(templatePath);
+  const currentLanguageTranslation = allTranslations[currentLanguage];
+  for (const elementId in currentLanguageTranslation) {
+    if (isParameterLink(elementId)) {
+      handleAsLink(elementId, currentLanguageTranslation);
+    } else {
+      handleAsOrdinary(elementId, currentLanguageTranslation);
     }
-  });
+  }
 }
 
-export { getCurrentLanguage, getAnswerFromAPI, switchLanguage };
+function isParameterLink(parameter) {
+  return parameter.includes("link");
+}
+
+function handleAsLink(elementId, currentLanguageTranslation) {
+  let path = currentLanguageTranslation[elementId];
+  path = staticFilesDirName + path;
+  const element = document.getElementById(elementId);
+  if (element !== null) { element.src = path; }
+}
+
+function handleAsOrdinary(elementId, currentLanguageTranslation) {
+  const elementTranslation = currentLanguageTranslation[elementId];
+  const element = document.getElementById(elementId);
+  if (element !== null) { element.innerHTML = elementTranslation; }
+}
+
+export { getCurrentLanguage, getAnswerFromApi, switchLanguage };

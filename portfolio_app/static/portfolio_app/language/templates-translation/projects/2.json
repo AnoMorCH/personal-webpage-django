@@ -3,6 +3,9 @@
     "title": "Anton Morozov | Python Web Developer",
     "english": "en",
     "russian": "ru",
+
+    "name": "the rating of cities (2022)",
+
     "page-name": "projects",
     "project-header": "project name:",
     "project-description": "rating of cities",
@@ -22,6 +25,9 @@
     "title": "Антон Морозов | Python Веб-Разработчик",
     "english": "анг",
     "russian": "ру",
+
+    "name": "рейтинг городов (2022)",
+
     "page-name": "проекты",
     "project-header": "название проекта:",
     "project-description": "рейтинг городов",

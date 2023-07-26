@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render
 
 from portfolio_app.classes.current_static_path import CurrentStaticPath
+from portfolio_app.classes.project import Project
 from portfolio_project.settings import STATIC_URL
 
 
@@ -15,11 +16,21 @@ def about_me(request: HttpRequest) -> HttpResponse:
     return render(request, "portfolio_app/about-me.html")
 
 
+def projects(request: HttpRequest) -> HttpResponse:
+    """Implements projects.html template."""
+    app_name = request.resolver_match.app_name
+    projects_amount = Project.get_amount(app_name)
+    context = { "projects_amount": [*range(1, projects_amount + 1)] }
+    return render(request, "portfolio_app/projects.html", context)
+
+
+def project(request: HttpRequest, id: int) -> HttpResponse:
+    return render(request, "portfolio_app/current-project.html")
+
+
 def get_current_static_path(request: HttpRequest) -> HttpResponse:
     """Return a name of current static folder directory."""
-    current_static_path = CurrentStaticPath(
-        request.resolver_match.app_name,
-        STATIC_URL
-    )
+    app_name = request.resolver_match.app_name
+    current_static_path = CurrentStaticPath(app_name, STATIC_URL)
     json_answer = current_static_path.get_json_response()
     return HttpResponse(json_answer)

@@ -1,0 +1,16 @@
+{
+  "english": {
+    "description-1": "the rating of cities (2022)",
+    "link-1": "/imgs/rating-of-cities/cover.png",
+
+    "description-2": "graphs for the rating of cities (2022)",
+    "link-2": "/imgs/graphs-of-rating-of-cities/cover.png"
+  },
+  "russian": {
+    "description-1": "рейтинг городов (2022)",
+    "link-1": "/imgs/rating-of-cities/cover.png",
+
+    "description-2": "графики для рейтингов городов (2022)",
+    "link-2": "/imgs/graphs-of-rating-of-cities/cover.png"
+  }
+}

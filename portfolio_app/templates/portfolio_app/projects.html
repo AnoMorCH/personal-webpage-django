@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "./include/head.html" %}
+  </head>
+
+  <body>
+    <header>
+      <div id="grid">
+        {% include "./include/header-grid.html" %}
+      </div>
+
+      <div id="burger-items">
+        {% include "./include/burger-items.html" %}
+      </div>
+    </header>
+
+    <main>
+      <div id="first-line"></div>
+
+      <div id="projects-container">
+        {% for project_number in projects_amount %}
+          <div class="content-img">
+            <a href="">
+              <img id="link-{{ project_number }}" src="" alt="">
+              <div id="description-{{ project_number }}"></div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </main>
+  </body>
+
+  <script src="https://kit.fontawesome.com/d41b91cba2.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script type="module" src="{% static 'portfolio_app/scripts/burger.js' %}"></script>
+  <script type="module" src="{% static 'portfolio_app/scripts/language-switch.js' %}"></script>
+  <script type="module" src="{% static 'portfolio_app/scripts/language-switches/templates-translation/projects.js' %}"></script>
+  <script type="module" src="{% static 'portfolio_app/scripts/language-switches/templates-translation/projects-list.js' %}"></script>
+</html>

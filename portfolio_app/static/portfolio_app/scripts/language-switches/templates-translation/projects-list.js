@@ -1,12 +1,10 @@
-// Switch a language of projects.html template.
-
 import { staticFilesDirName } from "../consts.js";
 import { getCurrentLanguage, switchLanguage } from "../helpers/support.js";
 
-switchProjectsLanguage();
+switchExistingProjectsLanguage();
 
-function switchProjectsLanguage() {
+function switchExistingProjectsLanguage() {
   const currentLanguage = getCurrentLanguage();
-  const templatePath = staticFilesDirName + "/language/templates-translation/projects.json";
+  const templatePath = staticFilesDirName + "/language/templates-translation/projects-list.json";
   switchLanguage(currentLanguage, templatePath);
 }
