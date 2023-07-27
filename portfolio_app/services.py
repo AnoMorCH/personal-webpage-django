@@ -18,8 +18,7 @@ def get_full_static_path(app_name: str) -> str:
     return static_path
 
 
-# TODO. Test it.
-def get_files_amount_inside_folder(folder_path: str) -> str:
+def get_files_amount_inside_folder(folder_path: str) -> int:
     """Returns amount of files inside a folder."""
     amount = len([name for name in os.listdir(folder_path)
                  if os.path.isfile(os.path.join(folder_path, name))])
