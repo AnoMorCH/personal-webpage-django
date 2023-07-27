@@ -11,7 +11,6 @@ def get_current_app_name() -> str:
     return app_name
 
 
-# TODO. Test it.
 def get_full_static_path(app_name: str) -> str:
     """Returns full path of a static folder of the project (including the
     directory where the project itself is stored.)"""
