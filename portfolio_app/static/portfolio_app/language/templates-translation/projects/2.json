@@ -1,13 +1,7 @@
 {
   "english": {
-    "title": "Anton Morozov | Python Web Developer",
-    "english": "en",
-    "russian": "ru",
-
     "name": "the rating of cities (2022)",
-
     "page-name": "projects",
-
     "project-header": "project name:",
     "project-description": "rating of cities",
     "customer-header": "customer name:",
@@ -24,14 +18,8 @@
     "description-description": "the project was done as a part of the summer practice at the university. its target was to create a webpage to store info about scientific research about quality of public transport of more than 80 russian cities in a visually attracting way. it had a lot of schemas, graphics and auto population of database using excel"
   },
   "russian": {
-    "title": "Антон Морозов | Python Веб-Разработчик",
-    "english": "анг",
-    "russian": "ру",
-
     "name": "рейтинг городов (2022)",
-
     "page-name": "проекты",
-
     "project-header": "название проекта:",
     "project-description": "рейтинг городов",
     "customer-header": "имя заказчика:",

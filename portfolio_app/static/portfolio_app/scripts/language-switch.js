@@ -2,6 +2,7 @@
 // the burger functionality.
 
 import { LanguageHandler } from "./classes/language-handler.js";
+import { switchCommonLanguage } from "./language-switches/common-translation/common.js";
 
 main();
 
@@ -12,4 +13,5 @@ function main() {
   languageHandler.setInitial(currentLanguage);
   languageHandler.setEventsOnSwitchBtns(languageSwitchBtns);
   languageHandler.colorSelectedBtn(currentLanguage);
+  switchCommonLanguage();
 }

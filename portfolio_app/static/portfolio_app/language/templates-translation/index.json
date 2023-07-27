@@ -1,8 +1,5 @@
 {
   "english": {
-    "title": "Anton Morozov | Python Web Developer",
-    "english": "en",
-    "russian": "ru",
     "page-name": "home",
     "authors-name": "anton morozov",
     "occupation": "a python web developer",
@@ -10,9 +7,6 @@
     "about-me": "about me"
   },
   "russian": {
-    "title": "Антон Морозов | Python Веб-Разработчик",
-    "english": "анг",
-    "russian": "ру",
     "page-name": "дом",
     "authors-name": "антон морозов",
     "occupation": "python веб-разработчик",
