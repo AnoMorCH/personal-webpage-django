@@ -1,15 +1,13 @@
 """A special script to store supportive functions."""
 import os
 
-from django.http import HttpRequest
-
 from portfolio_project.settings import BASE_DIR, STATIC_URL
+from portfolio_app.apps import PortfolioAppConfig
 
 
-# TODO. Test it.
-def get_current_app_name(request: HttpRequest) -> str:
+def get_current_app_name() -> str:
     """Returns current app name."""
-    app_name = request.resolver_match.app_name
+    app_name = PortfolioAppConfig.name 
     return app_name
 
 

@@ -19,7 +19,7 @@ def about_me(request: HttpRequest) -> HttpResponse:
 
 def projects(request: HttpRequest) -> HttpResponse:
     """Implements projects.html template."""
-    app_name = get_current_app_name(request) 
+    app_name = get_current_app_name() 
     projects_amount = Project.get_amount(app_name)
     context = {"projects_amount": [*range(1, projects_amount + 1)]}
     return render(request, "portfolio_app/projects.html", context)
@@ -27,7 +27,7 @@ def projects(request: HttpRequest) -> HttpResponse:
 
 def current_project(request: HttpRequest, project_id: int) -> HttpResponse:
     """Implements current-project.html template."""
-    app_name = get_current_app_name(request) 
+    app_name = get_current_app_name() 
     project_pictures_amount = Project(project_id).get_pictures_amount(app_name)
     context = {
         "project_id": project_id,
@@ -38,7 +38,7 @@ def current_project(request: HttpRequest, project_id: int) -> HttpResponse:
 
 def get_current_static_path(request: HttpRequest) -> HttpResponse:
     """Returns a name of current static folder directory."""
-    app_name = get_current_app_name(request) 
+    app_name = get_current_app_name() 
     current_static_path = CurrentStaticPath(app_name, STATIC_URL)
     json_answer = current_static_path.get_json_response()
     return HttpResponse(json_answer)

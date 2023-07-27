@@ -3,6 +3,7 @@ import json
 from django.test import TestCase
 
 from portfolio_app.classes.current_static_path import CurrentStaticPath
+from portfolio_app.services import get_current_app_name
 
 
 class CurrentStaticPathTests(TestCase):
@@ -31,3 +32,11 @@ class CurrentStaticPathTests(TestCase):
         actual_json_response = self.current_static_path.get_json_response()
         self.assertEqual(expected_json_response, actual_json_response)
         self.assertEqual(type(expected_json_response), type(actual_json_response))
+
+
+class ServicesTests(TestCase):
+    def test_get_current_app_name(self):
+        expected_app_name = "portfolio_app" 
+        actual_app_name = get_current_app_name()
+        self.assertEqual(expected_app_name, actual_app_name)
+        self.assertEqual(type(expected_app_name), type(actual_app_name))
