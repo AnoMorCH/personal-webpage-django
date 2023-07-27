@@ -20,12 +20,21 @@ def projects(request: HttpRequest) -> HttpResponse:
     """Implements projects.html template."""
     app_name = request.resolver_match.app_name
     projects_amount = Project.get_amount(app_name)
-    context = { "projects_amount": [*range(1, projects_amount + 1)] }
+    context = {"projects_amount": [*range(1, projects_amount + 1)]}
     return render(request, "portfolio_app/projects.html", context)
 
 
-def project(request: HttpRequest, id: int) -> HttpResponse:
-    return render(request, "portfolio_app/current-project.html")
+def current_project(request: HttpRequest, project_id: int) -> HttpResponse:
+    """Implements current-project.html template."""
+    app_name = request.resolver_match.app_name
+    project_pictures_amount = Project(project_id).get_pictures_amount(app_name)
+    context = {
+        "project_id": project_id,
+        "project_pictures_amount": [*range(1, project_pictures_amount + 1)]
+    }
+    return render(request, "portfolio_app/current-project.html", context)
+
+# TODO. Create a special function to return an app name.
 
 
 def get_current_static_path(request: HttpRequest) -> HttpResponse:

@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "./include/head.html" %}
+  </head>
+
+  <body>
+    <header>
+      <div id="grid">
+        {% include "./include/back-btn.html" %}
+        {% include "./include/header-grid.html" %}
+      </div>
+    </header>
+
+    <main>
+      <div>
+        <div>
+          <span id="project-header" class="bold-font"></span>
+          <span id="project-description"></span>
+        </div>
+
+        <div>
+          <span id="customer-header" class="bold-font"></span>
+          <span id="customer-description"></span> 
+        </div>
+        
+        <div>
+          <span id="timespan-header" class="bold-font"></span>
+          <span id="timespan-description"></span>
+        </div>
+
+        <div>
+          <span id="web-page-header" class="bold-font"></span>
+          <span>
+            <a id="web-page-full-url" href="" target="_blank"></a>
+          </span> 
+        </div>
+
+        <div>
+          <span id="feedback-header" class="bold-font"></span>
+          <a id="feedback-description" href="https://drive.google.com/file/d/180E2yGyYdordJjBZlmKKPZZ2H6Ktj0Zb/view?usp=sharing" target="_blank"></a>
+        </div>
+
+        <div>
+          <span id="responsibilities-header" class="bold-font"></span>
+          <span id="responsibilities-description"></span>
+        </div>
+
+        <div>
+          <span id="description-header" class="bold-font"></span>
+          <span id="description-description"></span>
+        </div>
+      </div>
+
+      <div id="projects-container">
+        <div class="content-img">
+          <a href="{% static 'portfolio_app/imgs/projects/' %}{{ project_id }}/cover.png" target="_blank">
+            <img src="{% static 'portfolio_app/imgs/projects/' %}{{ project_id }}/cover.png" alt="">
+          </a>
+        </div>
+
+        {% for project_img_number in project_pictures_amount %}
+          <div class="content-img">
+            <a href="{% static 'portfolio_app/imgs/projects/' %}{{ project_id }}/{{ project_img_number }}.png" target="_blank">
+              <img src="{% static 'portfolio_app/imgs/projects/' %}{{ project_id }}/{{ project_img_number }}.png" alt="">
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div id="additional-info">
+        <input type="hidden" id="project-id" value="{{ project_id }}">
+      </div>
+    </main>
+  </body>
+
+  <script src="https://kit.fontawesome.com/d41b91cba2.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script type="module" src="{% static 'portfolio_app/scripts/language-switch.js' %}"></script>
+  <script type="module" src="{% static 'portfolio_app/scripts/language-switches/templates-translation/current-project.js' %}"></script>
+</html>

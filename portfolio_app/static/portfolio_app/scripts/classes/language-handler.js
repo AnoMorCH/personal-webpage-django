@@ -14,8 +14,10 @@ class LanguageHandler {
     const currentTranslation = allTranslations[currentLanguage]
 
     for (const elementId in currentTranslation) {
-      if (this.#isParameterLink(elementId)) {
-        this.#handleAsLink(elementId, currentTranslation);
+      if (this.#isParameterImg(elementId)) {
+        this.#handleAsImg(elementId, currentTranslation);
+      } else if (this.#isParameterFullLink(elementId)) {
+        this.#handleAsFullLink(elementId, currentTranslation);
       } else {
         this.#handleAsOrdinary(elementId, currentTranslation);
       }
@@ -57,11 +59,23 @@ class LanguageHandler {
     return Cookies.get(languageVarName);
   }
 
-  #isParameterLink(parameter) {
-    return parameter.includes("link");
+  // The difference between "full link" and just "link" is that the "full link"
+  // is designed to change both href and innerHTML when "link" - only href.
+  #isParameterFullLink(parameter) {
+    return parameter.includes("full-url");
   }
 
-  #handleAsLink(elementId, currentTranslation) {
+  #handleAsFullLink(elementId, currentTranslation) {
+    const translation = currentTranslation[elementId];
+    const element = document.getElementById(elementId);
+    if (element !== null) { element.innerHTML = translation; }
+  }
+
+  #isParameterImg(parameter) {
+    return parameter.includes("img");
+  }
+
+  #handleAsImg(elementId, currentTranslation) {
     let path = currentTranslation[elementId];
     path = staticFilesDirName + path;
     const element = document.getElementById(elementId);
