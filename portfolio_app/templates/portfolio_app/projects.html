@@ -24,7 +24,7 @@
       <div id="projects-container">
         {% for project_number in projects_amount %}
           <div class="content-img">
-            <a href="">
+            <a href="{% url 'portfolio_app:project_page' project_number %}">
               <img id="img-{{ project_number }}" src="" alt="">
               <div id="description-{{ project_number }}"></div>
             </a>
