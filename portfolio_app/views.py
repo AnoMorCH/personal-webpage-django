@@ -30,7 +30,9 @@ def projects(request: HttpRequest) -> HttpResponse:
 def current_project(request: HttpRequest, project_id: int) -> HttpResponse:
     """Implements current-project.html template."""
     app_name = get_current_app_name()
-    project_pictures_amount = Project(project_id).get_pictures_amount(app_name)
+    static_path = get_full_static_path(app_name)
+    pictures_folder_path = static_path + "/imgs/projects/"
+    project_pictures_amount = Project(project_id).get_pictures_amount(pictures_folder_path)
     context = {
         "project_id": project_id,
         "project_pictures_amount": [*range(1, project_pictures_amount + 1)]
