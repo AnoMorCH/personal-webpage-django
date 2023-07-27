@@ -18,11 +18,8 @@ class Project:
         pictures_without_cover_amount = all_pictures_amount - 1
         return pictures_without_cover_amount
 
-    # TODO. Write tests here.
     @staticmethod
-    def get_amount(app_name: str):
+    def get_amount(projects_folder_path: str):
         """Returns amount of the projects."""
-        static_path = get_full_static_path(app_name)
-        projects_folder_path = static_path + "/language/templates-translation/projects"
         projects_amount = get_files_amount_inside_folder(projects_folder_path)
         return projects_amount 

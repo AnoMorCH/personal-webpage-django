@@ -13,6 +13,19 @@ from portfolio_app.services import (
 )
 
 
+TEST_PATH = os.getcwd() + "/test/"
+
+
+class BasicFunctions:
+    def _create_two_dump_files_and_folder(self, path: str) -> None:
+        os.mkdir(path)
+        os.mknod(path + "1.txt")
+        os.mknod(path + "2.txt")
+
+    def _delete_folder(self, path: str) -> None:
+        shutil.rmtree(path, ignore_errors=True)
+
+
 class CurrentStaticPathTests(TestCase):
     app_name = "my_app"
     static_path = "/static_path/"
@@ -31,7 +44,8 @@ class CurrentStaticPathTests(TestCase):
     def test_private_get_response(self):
         actual_value = self.current_static_path._CurrentStaticPath__get_response()
         self.assertEqual(self.expected_response["path"], actual_value["path"])
-        self.assertEqual(self.expected_response["status"], actual_value["status"])
+        self.assertEqual(self.expected_response["status"], 
+                         actual_value["status"])
         self.assertEqual(type(actual_value), dict)
 
     def test_get_json_response(self):
@@ -41,7 +55,7 @@ class CurrentStaticPathTests(TestCase):
         self.assertEqual(type(expected_value), type(actual_value))
 
 
-class ServicesTests(TestCase):
+class ServicesTests(TestCase, BasicFunctions):
     app_name = "portfolio_app"
 
     def test_get_current_app_name(self):
@@ -57,18 +71,25 @@ class ServicesTests(TestCase):
         self.assertEqual(type(expected_value), type(actual_value))
 
     def test_get_files_amount_inside_folder(self):
-        test_path = os.getcwd() + "/test/"
-        self.__create_two_dump_files_and_folder(test_path)
-        actual_value = get_files_amount_inside_folder(test_path)
+        self._create_two_dump_files_and_folder(TEST_PATH)
+        actual_value = get_files_amount_inside_folder(TEST_PATH)
         expected_value = 2
         self.assertEqual(expected_value, actual_value)
         self.assertEqual(type(expected_value), type(actual_value))
-        self.__delete_folder(test_path)
+        self._delete_folder(TEST_PATH)
 
-    def __create_two_dump_files_and_folder(self, path: str) -> None:
-        os.mkdir(path)
-        os.mknod(path + "1.txt")
-        os.mknod(path + "2.txt")
 
-    def __delete_folder(self, path: str) -> None:
-        shutil.rmtree(path, ignore_errors=True)
+class ProjectClassTest(TestCase, BasicFunctions):
+    def setUp(self) -> None:
+        self._create_two_dump_files_and_folder(TEST_PATH)
+    
+    def tearDown(self) -> None:
+        self._delete_folder(TEST_PATH)
+
+    def test_get_amount(self):
+        actual_value = get_files_amount_inside_folder(TEST_PATH)
+        expected_value = 2
+        self.assertEqual(expected_value, actual_value)
+        self.assertEqual(type(expected_value), type(actual_value))
+
+    
