@@ -41,8 +41,12 @@ class LanguageHandler {
   }
 
   colorSelectedBtn(currentLanguage) {
-    const btn = document.getElementById(currentLanguage);
-    btn.classList.add(lightGreenColorClassName);
+    try {
+      const btn = document.getElementById(currentLanguage);
+      btn.classList.add(lightGreenColorClassName);
+    } catch (error) {
+      window.location.reload();
+    }
   }
 
   setInitial(currentLanguage) {
