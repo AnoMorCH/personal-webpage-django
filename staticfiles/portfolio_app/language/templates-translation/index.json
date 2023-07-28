@@ -1,0 +1,16 @@
+{
+  "english": {
+    "page-name": "home",
+    "authors-name": "anton morozov",
+    "occupation": "a python web developer",
+    "experience": "i've been working in software craftsmanship since 2022",
+    "about-me": "about me"
+  },
+  "russian": {
+    "page-name": "дом",
+    "authors-name": "антон морозов",
+    "occupation": "python веб-разработчик",
+    "experience": "я работаю в сфере разработки программного обеспечения с 2022",
+    "about-me": "обо мне"
+  }
+}

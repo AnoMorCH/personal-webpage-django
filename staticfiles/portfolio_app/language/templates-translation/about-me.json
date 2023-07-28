@@ -1,0 +1,22 @@
+{
+  "english": {
+    "page-name": "about me",
+    "first-line": "hello! i'm <span class='bold-font'> a fullstack web developer </span> from <span class='bold-font'>st. petersburg, russia</span> who loves <span class='bold-font'> python but is ready to use frontend techs like html, css, js. </span>",
+    "second-line-content": "currently i study as <span class='bold-font'> a computer science student at spbstu </span> and <span class='bold-font'>work part time as a freelancer.</span> so if you're interested in knowing more about my work experience,  please read",
+    "cv": "my cv.",
+    "characteristics-title": "my characteristics",
+    "hobbies": "computers / reading / investments / handmade",
+    "contact-me-title": "contact me",
+    "contact-me-description": "i see my job as art and like unusual tasks so don't be shy to write to me about any it idea you have"
+  },
+  "russian": {
+    "page-name": "обо мне",
+    "first-line": "здравствуйте! я <span class='bold-font'>fullstack веб-разработчик</span> из <span class='bold-font'>россии, санкт-петербург</span>, которому нравится <span class='bold-font'>python, но я также готов использовать frontend технологии как html, css, js.</span>",
+    "second-line-content": "на данном этапе я учусь как <span class='bold-font'>студент по компьютерным технологиям в спбпу</span> и <span class='bold-font'>подрабатываю как фрилансер</span>. поэтому если вы заинтересованы в том, чтобы узнать о моем рабочем опыте, пожалуйста, прочитайте",
+    "cv": "мое резюме.",
+    "characteristics-title": "мои навыки",
+    "hobbies": "компьютеры / чтение / инвестиции / рукоделие",
+    "contact-me-title": "связаться со мной",
+    "contact-me-description": "я рассматриваю свою работу как часть искусства и люблю необычные задачи, поэтому не стесняйтесь писать мне с любой вашей it-идеей"
+  }
+}

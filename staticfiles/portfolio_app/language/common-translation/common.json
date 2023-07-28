@@ -1,0 +1,12 @@
+{
+  "english": {
+    "title": "Anton Morozov | Python Web Developer",
+    "english": "en",
+    "russian": "ru"
+  },
+  "russian": {
+    "title": "Антон Морозов | Python Веб-Разработчик",
+    "english": "анг",
+    "russian": "ру"
+  }
+}
