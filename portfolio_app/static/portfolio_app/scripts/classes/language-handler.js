@@ -18,6 +18,8 @@ class LanguageHandler {
         this.#handleAsImg(elementId, currentTranslation);
       } else if (this.#isParameterFullLink(elementId)) {
         this.#handleAsFullLink(elementId, currentTranslation);
+      } else if (this.#isParameterPartialLink(elementId)) {
+        this.#handleAsPartialLink(elementId, currentTranslation);
       } else {
         this.#handleAsOrdinary(elementId, currentTranslation);
       }
@@ -61,6 +63,18 @@ class LanguageHandler {
 
   getCurrentFromCookie() {
     return Cookies.get(languageVarName);
+  }
+
+  #isParameterPartialLink(parameter) {
+    return parameter.includes("partial-url");
+  }
+
+  #handleAsPartialLink(elementId, currentTranslation) {
+    const translation = currentTranslation[elementId];
+    const element = document.getElementById(elementId);
+    if (element !== null) {
+      element.href = translation;
+    }
   }
 
   // The difference between "full link" and just "link" is that the "full link"
