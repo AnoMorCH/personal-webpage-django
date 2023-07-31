@@ -72,7 +72,10 @@ class LanguageHandler {
   #handleAsFullLink(elementId, currentTranslation) {
     const translation = currentTranslation[elementId];
     const element = document.getElementById(elementId);
-    if (element !== null) { element.innerHTML = translation; }
+    if (element !== null) {
+      element.href = translation;
+      element.innerHTML = translation;
+    }
   }
 
   #isParameterImg(parameter) {
