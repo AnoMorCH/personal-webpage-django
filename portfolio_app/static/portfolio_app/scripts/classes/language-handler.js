@@ -14,14 +14,17 @@ class LanguageHandler {
     const currentTranslation = allTranslations[currentLanguage]
 
     for (const elementId in currentTranslation) {
+      const translation = currentTranslation[elementId];
+      const element = document.getElementById(elementId);
+
       if (this.#isParameterImg(elementId)) {
-        this.#handleAsImg(elementId, currentTranslation);
+        this.#handleAsImg(element, translation);
       } else if (this.#isParameterFullLink(elementId)) {
-        this.#handleAsFullLink(elementId, currentTranslation);
+        this.#handleAsFullLink(element, translation);
       } else if (this.#isParameterPartialLink(elementId)) {
-        this.#handleAsPartialLink(elementId, currentTranslation);
+        this.#handleAsPartialLink(element, translation);
       } else {
-        this.#handleAsOrdinary(elementId, currentTranslation);
+        this.#handleAsOrdinary(element, translation);
       }
     }
   }
@@ -69,9 +72,7 @@ class LanguageHandler {
     return parameter.includes("partial-url");
   }
 
-  #handleAsPartialLink(elementId, currentTranslation) {
-    const translation = currentTranslation[elementId];
-    const element = document.getElementById(elementId);
+  #handleAsPartialLink(element, translation) {
     if (element !== null) {
       element.href = translation;
     }
@@ -83,9 +84,7 @@ class LanguageHandler {
     return parameter.includes("full-url");
   }
 
-  #handleAsFullLink(elementId, currentTranslation) {
-    const translation = currentTranslation[elementId];
-    const element = document.getElementById(elementId);
+  #handleAsFullLink(element, translation) {
     if (element !== null) {
       element.href = translation;
       element.innerHTML = translation;
@@ -96,17 +95,17 @@ class LanguageHandler {
     return parameter.includes("img");
   }
 
-  #handleAsImg(elementId, currentTranslation) {
-    let path = currentTranslation[elementId];
-    path = staticFilesDirName + path;
-    const element = document.getElementById(elementId);
-    if (element !== null) { element.src = path; }
+  #handleAsImg(element, translation) {
+    const path = staticFilesDirName + translation;
+    if (element !== null) {
+     element.src = path; 
+    }
   }
 
-  #handleAsOrdinary(elementId, currentTranslation) {
-    const translation = currentTranslation[elementId];
-    const element = document.getElementById(elementId);
-    if (element !== null) { element.innerHTML = translation; }
+  #handleAsOrdinary(element, translation) {
+    if (element !== null) { 
+      element.innerHTML = translation; 
+    }
   }
 }
 
