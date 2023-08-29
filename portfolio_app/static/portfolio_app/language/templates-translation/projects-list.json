@@ -4,13 +4,19 @@
     "img-1": "imgs/projects/1/cover.png",
 
     "description-2": "graphs for the rating of cities (2022)",
-    "img-2": "imgs/projects/2/cover.png"
+    "img-2": "imgs/projects/2/cover.png",
+
+    "description-3": "map for the rating of cities (2023)",
+    "img-3": "imgs/projects/3/cover.png"
   },
   "russian": {
     "description-1": "рейтинг городов (2022)",
     "img-1": "imgs/projects/1/cover.png",
 
     "description-2": "графики для рейтингов городов (2022)",
-    "img-2": "imgs/projects/2/cover.png"
+    "img-2": "imgs/projects/2/cover.png",
+
+    "description-3": "карта рейтинга городов (2023)",
+    "img-3": "imgs/projects/3/cover.png"
   }
 }

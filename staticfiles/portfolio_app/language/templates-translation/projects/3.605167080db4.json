@@ -1,0 +1,38 @@
+{
+  "english": {
+    "name": "map for the rating of cities (2023)",
+    "page-name": "projects",
+    "project-header": "project name:",
+    "project-description": "rating of cities by public transport on a map",
+    "customer-header": "customer name:",
+    "customer-description": "llc a+s transproekt",
+    "timespan-header": "timespan:",
+    "timespan-description": "2023",
+    "web-page-header": "",
+    "web-page-full-url": "",
+    "feedback-header": "",
+    "feedback-description": "",
+    "responsibilities-header": "responsibilities:",
+    "responsibilities-description": "python on django, frontend on html / css / js and chartjs, deploying on a server using celery",
+    "description-header": "description:",
+    "description-description": "the interacting app where the quality of public transport of a town is shown in an attractive map. a town can be added, edited and removed with the minimum interference of a programmer as everything is implemented using the django admin panel. also, the project has a special panel where data can be uploaded using csv (done using celery as sometimes the uploading consumes too much time for some limited servers where oom killer is set up in a special way)."
+  },
+  "russian": {
+    "name": "карта рейтинга городов (2023)",
+    "page-name": "проекты",
+    "project-header": "название проекта:",
+    "project-description": "рейтинг городов по общественному транспорту на карте",
+    "customer-header": "имя заказчика:",
+    "customer-description": "ооо ''а+с транспроект''",
+    "timespan-header": "время работы над проектом:",
+    "timespan-description": "2023",
+    "web-page-header": "",
+    "web-page-full-url": "",
+    "feedback-header": "",
+    "feedback-description": "",
+    "responsibilities-header": "обязанности:",
+    "responsibilities-description": "python на django, frontend на html / css / js и chartjs, загрузка на сервер при помощи celery",
+    "description-header": "описание:",
+    "description-description": "интерактивное приложение, где качество показано качество общественного транспорта городов на увлекательной карте. каждый город может быть добавлен, изменен и удален при минимальном вмешательстве программиста, так как это реализовано через django admin panel. также проект имеет специальную панель, где данные могут быть загружены при помощи csv (механизм реализован при помощи celery, потому что иногда процесс загрузки занимает очень много времени на некоторых ограниченных серверах, где по-своему настроен oom killer)."
+  }
+}
